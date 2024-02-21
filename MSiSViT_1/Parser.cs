@@ -94,7 +94,7 @@ namespace MSiSViT_1
         {
             int i1 = list.FindIndex(tuple => tuple.Item1 == "++");
             int i2 = list.FindIndex(tuple => tuple.Item1 == "+");
-            if (i1 != -1) list[i2] = new Tuple<string, int>("+", list[i2].Item2 - list[i1].Item2);
+            if (i1 != -1) list[i2] = new Tuple<string, int>("+", list[i2].Item2 - list[i1].Item2 * 2);
             i1 = list.FindIndex(tuple => tuple.Item1 == "+=");
             i2 = list.FindIndex(tuple => tuple.Item1 == "+");
             if (i1 != -1) list[i2] = new Tuple<string, int>("+", list[i2].Item2 - list[i1].Item2);
@@ -110,6 +110,21 @@ namespace MSiSViT_1
             i1 = list.FindIndex(tuple => tuple.Item1 == "<>");
             i2 = list.FindIndex(tuple => tuple.Item1 == "<");
             if (i1 != -1) list[i2] = new Tuple<string, int>("<", list[i2].Item2 - list[i1].Item2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "-=");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "-");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("-", list[i2].Item2 - list[i1].Item2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "*=");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "*");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("*", list[i2].Item2 - list[i1].Item2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "/=");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "/");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("/", list[i2].Item2 - list[i1].Item2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "**");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "*");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("*", list[i2].Item2 - list[i1].Item2 * 2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "--");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "-");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("-", list[i2].Item2 - list[i1].Item2 * 2);
             return list;
         }
 
