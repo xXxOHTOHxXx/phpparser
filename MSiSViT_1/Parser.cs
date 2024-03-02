@@ -12,7 +12,7 @@ namespace MSiSViT_1
         public static List<Tuple<string, int>> OperandParse(string input)
         {
             var operandCounts = new Dictionary<string, int>();
-            var matches = Regex.Matches(input, @"[$]\w+?->\w+");
+            var matches = Regex.Matches(input, @"[$]\w+(->)?(\w+)?");
 
             foreach (Match match in matches)
             {
@@ -22,7 +22,7 @@ namespace MSiSViT_1
                 }
                 else
                 {
-                    operandCounts.Add(match.Value,1);
+                    operandCounts.Add(match.Value, 1);
                 }
             }
 
@@ -37,7 +37,7 @@ namespace MSiSViT_1
 
         private static List<Tuple<string, int>> CountOperators(string code)
         {
-            string[] operators = { "+", "-", "*", "/", "%", ">", "<", "==", "!=", "&&", "||", "**", "<>", "<=", ">=", "!", "++", "--", ".", "->" };
+            string[] operators = { "+", "-", "*", "/", "%", ">", "<", "==", "!=", "&&", "||", "**", "<>", "<=", ">=", "!", "++", "--", "+=", "->", "//" };
             Dictionary<string, int> operatorCounts = new Dictionary<string, int>();
             foreach (string line in code.Split('\n'))
                 foreach (string op in operators)
@@ -127,10 +127,13 @@ namespace MSiSViT_1
             if (i1 != -1) list[i2] = new Tuple<string, int>("-", list[i2].Item2 - list[i1].Item2 * 2);
             i1 = list.FindIndex(tuple => tuple.Item1 == "->");
             i2 = list.FindIndex(tuple => tuple.Item1 == ">");
-            if (i1 != -1) list[i2] = new Tuple<string, int>("-", list[i2].Item2 - list[i1].Item2);
+            if (i1 != -1) list[i2] = new Tuple<string, int>(">", list[i2].Item2 - list[i1].Item2);
             i1 = list.FindIndex(tuple => tuple.Item1 == "->");
             i2 = list.FindIndex(tuple => tuple.Item1 == "-");
             if (i1 != -1) list[i2] = new Tuple<string, int>("-", list[i2].Item2 - list[i1].Item2);
+            i1 = list.FindIndex(tuple => tuple.Item1 == "//");
+            i2 = list.FindIndex(tuple => tuple.Item1 == "/");
+            if (i1 != -1) list[i2] = new Tuple<string, int>("/", list[i2].Item2 - list[i1].Item2 * 2);
             return list;
         }
 

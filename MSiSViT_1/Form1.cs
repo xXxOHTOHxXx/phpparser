@@ -19,15 +19,19 @@ namespace MSiSViT_1
 
             this.dataGridView1.Rows.Clear();
             this.dataGridView2.Rows.Clear();
+            int sum1 = 0; int sum2 = 0; 
             foreach (var operand in OperandsParsed)
             {
                 this.dataGridView1.Rows.Add(this.dataGridView1.Rows.Count, operand.Item1, operand.Item2);
+                sum1 += operand.Item2;
             }
-
+            this.dataGridView1.Rows.Add(this.dataGridView1.Rows.Count, "Общее кольичество операндов", sum1);
             foreach (var _operator in OperatorsParsed)
             {
                 this.dataGridView2.Rows.Add(this.dataGridView2.Rows.Count, _operator.Item1, _operator.Item2);
+                sum2+= _operator.Item2;
             }
+            this.dataGridView2.Rows.Add(this.dataGridView2.Rows.Count, "Общее кольичество операторов", sum2);
         }
     }
 }

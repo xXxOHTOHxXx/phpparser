@@ -65,7 +65,7 @@
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel4.Size = new Size(1006, 721);
+            tableLayoutPanel4.Size = new Size(1081, 721);
             tableLayoutPanel4.TabIndex = 2;
             // 
             // tableLayoutPanel3
@@ -84,7 +84,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 85F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 27F));
-            tableLayoutPanel3.Size = new Size(1000, 353);
+            tableLayoutPanel3.Size = new Size(1075, 353);
             tableLayoutPanel3.TabIndex = 2;
             // 
             // dataGridView2
@@ -92,11 +92,11 @@
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Columns.AddRange(new DataGridViewColumn[] { Column_i, Column_Operand, dataGridViewTextBoxColumn3 });
             dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.Location = new Point(503, 4);
+            dataGridView2.Location = new Point(540, 4);
             dataGridView2.Margin = new Padding(3, 4, 3, 4);
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(494, 260);
+            dataGridView2.Size = new Size(532, 260);
             dataGridView2.TabIndex = 4;
             // 
             // Column_i
@@ -130,7 +130,7 @@
             Button_Parse.Location = new Point(3, 272);
             Button_Parse.Margin = new Padding(3, 4, 3, 4);
             Button_Parse.Name = "Button_Parse";
-            Button_Parse.Size = new Size(994, 77);
+            Button_Parse.Size = new Size(1069, 77);
             Button_Parse.TabIndex = 2;
             Button_Parse.Text = "Parse";
             Button_Parse.UseVisualStyleBackColor = false;
@@ -145,7 +145,7 @@
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(494, 260);
+            dataGridView1.Size = new Size(531, 260);
             dataGridView1.TabIndex = 3;
             // 
             // Column_J
@@ -171,19 +171,18 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
+            tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle());
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 267F));
-            tableLayoutPanel1.Controls.Add(richTextBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(richTextBox1, 0, 0);
             tableLayoutPanel1.Controls.Add(tableLayoutPanel2, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 4);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(1000, 352);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Size = new Size(1075, 352);
             tableLayoutPanel1.TabIndex = 1;
             // 
             // richTextBox1
@@ -251,7 +250,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1006, 721);
+            ClientSize = new Size(1081, 721);
             Controls.Add(tableLayoutPanel4);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
@@ -279,10 +278,10 @@
         private DataGridViewTextBoxColumn Column_Operator;
         private DataGridViewTextBoxColumn Column_f1j;
         private TableLayoutPanel tableLayoutPanel1;
-        private RichTextBox richTextBox1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label Label_Volume;
         private Label Label_Length;
         private Label Label_Dictionary;
+        private RichTextBox richTextBox1;
     }
 }
